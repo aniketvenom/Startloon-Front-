@@ -1,0 +1,209 @@
+<section id="createCustomer">
+    <div class="container-xxsm mt-5 bg-light">
+
+        <h2 class="text-center display-2 mt-4">Enter Patient's details</h2>
+        <div class="container-sm bg-light">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                <div>
+                    <label class="mt-3 form-label">Name: </label>
+                    <input type="text" name="customerName" class="form-control" placeholder="eg: Aniket"
+                        [(ngModel)]="patient.name" formControlName="name">
+                </div>
+
+                <!-- name validation -->
+                <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['name'].errors && f['name'].errors['required']">
+                        Name is required**
+                    </div>
+                    <div *ngIf="f['name'].errors && f['name'].errors['minlength']">
+                        Min. 3 characters required**
+                    </div>
+                    <div *ngIf="f['name'].errors && f['name'].errors['maxlength']">
+                        Max. 30 characters allowed**
+                    </div>
+
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Age: </label>
+                    <input type="tel" name="customerLasName" class="form-control" placeholder="eg: 10"
+                        [(ngModel)]="patient.age" formControlName="age">
+                </div>
+
+                <!-- Age validation -->
+                <div *ngIf="f['age'].touched && f['age'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['age'].errors && f['age'].errors['required']">
+                        Name is required**
+                    </div>
+                    <!-- <div *ngIf="f['age'].errors && f['age'].errors['pattern']">
+                        Invalid age**
+                    </div> -->
+
+
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Email: </label>
+                    <input typr="text" name="customerEmail" class="form-control " placeholder="eg: ram@xyz.com"
+                        [(ngModel)]="patient.email" formControlName="email">
+                </div>
+
+                <!-- email validation -->
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                        Email is required**
+                    </div>
+                    <div *ngIf="f['email'].errors && f['email'].errors['email']">
+                        Invalid Email**
+                    </div>
+                    <div *ngIf="f['email'].errors && f['email'].errors['maxlength']">
+                        Max. 50 characters allowed**
+                    </div>
+
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Contact Number: </label>
+                    <input type="tel" name="customerNumber" class="form-control " placeholder="eg: 9215212121"
+                        [(ngModel)]="patient.phone" formControlName="phone">
+                </div>
+
+                <!-- Contact Validation -->
+                <div *ngIf="f['phone'].touched && f['phone'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['phone'].errors && f['phone'].errors['required']">
+                        Contact No. is required**
+                    </div>
+                    <div *ngIf="f['phone'].errors && f['phone'].errors['pattern']">
+                        Invalid Phone Number**
+                    </div>
+                    <div *ngIf="f['phone'].errors && f['phone'].errors['maxlength']">
+                        Max. 10 characters allowed**
+                    </div>
+                    <div *ngIf="f['phone'].errors && f['phone'].errors['minlength']">
+                        Min. 10 characters required**
+                    </div>
+
+
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Gender: </label>
+                    <label style="margin-left: 15px;">Male </label>
+                    <input type="radio" name="gender" value="Male" [(ngModel)]="patient.gender"
+                        formControlName="gender">
+                    <label style="margin-left: 15px;">Female </label>
+                    <input type="radio" name="gender" value="Female" [(ngModel)]="patient.gender"
+                        formControlName="gender">
+                    <label style="margin-left: 15px;">Others </label>
+                    <input type="radio" name="gender" value="Others" [(ngModel)]="patient.gender"
+                        formControlName="gender">
+                </div>
+
+                <!-- gender validation -->
+                <div *ngIf="f['gender'].touched && f['gender'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['gender'].errors && f['gender'].errors['required']">
+                        Gender is required**
+                    </div>
+                </div>
+
+
+
+
+                <div>
+                    <label class="mt-3 form-label">Affected Side: </label>
+                    <input type="text" name="customerBalance" class="form-control " placeholder="eg head"
+                        [(ngModel)]="patient.affectedSide" formControlName="affectedSide">
+                </div>
+
+                <!-- affectedSide validation -->
+                <div *ngIf="f['affectedSide'].touched && f['affectedSide'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['affectedSide'].errors && f['affectedSide'].errors['required']">
+                        Affected Side is required**
+                    </div>
+
+                    <div *ngIf="f['affectedSide'].errors && f['affectedSide'].errors['maxlength']">
+                        max 50 characters allowed**
+                    </div>
+                    <div *ngIf="f['affectedSide'].errors && f['affectedSide'].errors['minlength']">
+                        Minimum 3 characters allowed**
+                    </div>
+                </div>
+
+
+                <div>
+                    <label class="mt-3 form-label">Condition: </label>
+                    <input type="text" name="customerAadharNumber" class="form-control" [(ngModel)]="patient.con"
+                        formControlName="Condition">
+                </div>
+
+                <!-- Condition validation -->
+                <div *ngIf="f['Condition'].touched && f['Condition'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['Condition'].errors && f['Condition'].errors['required']">
+                        Condition is required**
+                    </div>
+
+                    <div *ngIf="f['Condition'].errors && f['Condition'].errors['maxlength']">
+                        max 50 characters allowed**
+                    </div>
+                    <div *ngIf="f['Condition'].errors && f['Condition'].errors['minlength']">
+                        Minimum 3 characters allowed**
+                    </div>
+
+
+                </div>
+
+
+                <div>
+                    <label class="mt-3 form-label">Speciality: </label>
+                    <input type="text" name="customerPanNumber" class="form-control" [(ngModel)]="patient.speciality"
+                        formControlName="Speciality">
+                </div>
+
+                <!-- Speciality validation -->
+                <div *ngIf="f['Speciality'].touched && f['Speciality'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['Speciality'].errors && f['Speciality'].errors['required']">
+                        Speciality is required**
+                    </div>
+
+                    <div *ngIf="f['Speciality'].errors && f['Speciality'].errors['maxlength']">
+                        Max. 50 characters allowed**
+                    </div>
+                    <div *ngIf="f['Speciality'].errors && f['Speciality'].errors['minlength']">
+                        Min. 3 characters required**
+                    </div>
+
+
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Medical History: </label>
+                    <input type="text" name="medicalHistory" class="form-control" [(ngModel)]="patient.medicalHistory"
+                        formControlName="medicalHistory">
+
+                </div>
+
+                <!-- Medical History is required -->
+                <div *ngIf="f['medicalHistory'].touched && f['medicalHistory'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['medicalHistory'].errors && f['medicalHistory'].errors['required']">
+                        Medical History is required**
+                    </div>
+
+                    <div *ngIf="f['medicalHistory'].errors && f['medicalHistory'].errors['maxlength']">
+                        Max. 50 characters allowed**
+                    </div>
+                    <div *ngIf="f['medicalHistory'].errors && f['medicalHistory'].errors['minlength']">
+                        Min. 3 characters required**
+                    </div>
+                </div>
+
+
+                <div class="text-center m-4 ">
+
+                    <button class="btn m-3" type="submit">Submit</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</section>

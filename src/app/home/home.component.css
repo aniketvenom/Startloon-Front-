@@ -1,0 +1,22 @@
+div{
+    background-color: #012E57;
+    color: white;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    
+    background-color: black;
+    height: 100px;
+    bottom: 0px;
+    color: white;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+
+.container-xxsm{
+      height: 100vh;
+}

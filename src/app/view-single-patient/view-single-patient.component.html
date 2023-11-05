@@ -1,0 +1,63 @@
+<div class="container m-3">
+
+    <h3>View Patient</h3>
+</div>
+
+<div class="row mx-1 mt-5">
+    <div class="col col-9 m-2">
+
+        <!-- <h4>{{patient.name}},{{patient.gender}}/{{patient.age}}</h4>
+        <p>Patient Id : {{patient.petientId}}</p> -->
+        <h4 style="color: #012E57;">{{patient.name}},{{patient.gender}}/{{patient.age}}</h4>
+        <p style="color: #012E57;">Patient Id : {{patient.petientId}}</p>
+
+    </div>
+
+    <div class="col col-1 m-2 ">
+        <img src="assets/noun-person-831907.png" alt="img" style="height:4rem;">
+    </div>
+</div>
+
+<div class="container-sm text-white m-2" style="background-color: #002642;" id="centerDiv">
+
+    <h5 class="text-center py-1 my-2">Goal Reached</h5>
+    <div class="container justify-content-center align-item-center text-center p-3">
+        <input type="range" name="" id="" value="40" min="0" max="100">
+        <p>40%</p>
+    </div>
+</div>
+
+<div class="container m-3">
+    <div class="row">
+        <div class="col col-5">
+
+            <p class="text-muted">Phone No.</p>
+            <p class="text-muted">Mail ID</p>
+            <p class="text-muted">Affected Side</p>
+            <p class="text-muted">Condition</p>
+            <p class="text-muted">Speciality</p>
+        </div>
+        <div class="col col-5">
+
+            <p>{{patient.phone}}</p>
+            <p>{{patient.email}}</p>
+            <p>{{patient.affectedSide}}</p>
+            <p>{{patient.con}}</p>
+            <p>{{patient.speciality}}</p>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container m-3">
+    <div class="row">
+        <div class="col col-5" style="color:blue;">
+            <p>Medical history</p>
+        </div>
+        <div class="col col-5">
+            <p>{{patient.medicalHistory}}</p>
+        </div>
+
+    </div>
+</div>
